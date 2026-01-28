@@ -10,7 +10,11 @@
  */
 int bitMatch(int x, int y)
 {
-    return 2;
+    //case 1 match on 1 x & y
+    //case 2 : match on 0, (~x) & (~y)
+    return (x & y) | (~(x) & ~(y));
+    return ~(x^y);
+    return ~( (x|y) & (~(x&y) ));
 }
 
 int test_bitMatch(int x, int y)

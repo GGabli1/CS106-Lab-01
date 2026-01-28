@@ -9,7 +9,8 @@
  */
 int isTmax(int x)
 {
-    return 2;
+    //test x = TMAX is the same as text ~x = TMin
+    return !((~x)^(1 << 31));
 }
 
 int test_isTmax(int x)
@@ -19,7 +20,7 @@ int test_isTmax(int x)
 
 int main(void)
 {
-    int x = 0;
+    int x = 5;
     printf("expected: %x\n", isTmax(x));
     printf("actual  : %x\n", test_isTmax(x));
 }

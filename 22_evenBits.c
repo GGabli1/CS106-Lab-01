@@ -8,7 +8,11 @@
  */
 int evenBits(void)
 {
-    return 2;
+    //generate 55555555
+    //start from 00000055
+    //go to 00005500
+    //end up with 00005555
+    return ((0x55 << 8) | 0x55) << 16 | (0x55 << 8) | 0x55);
 }
 
 int test_evenBits(void)
